@@ -5,13 +5,16 @@
 23432 -> да
 */
 
-void NumPalindrome(int num)
+void PalindromeNumber(int number)
 {
-    if (num / 10000 == num % 10 && num / 1000 % 10 == num % 100 / 10) 
-    Console.WriteLine("Является палендромом");
-
+    Console.Write($"{number} -> ");
+    
+    if (number / 10000 == number % 10 && number / 1000 % 10 == number % 100 / 10) 
+        Console.WriteLine("Является палендромом");
     else
         Console.WriteLine("Не является палендромом");
 }
 
-NumPalindrome(52925);
+Console.WriteLine("Введите число: ");
+int num = int.Parse(Console.ReadLine());
+PalindromeNumber(num);
