@@ -1,19 +1,19 @@
-﻿/*Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+﻿/*Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
 
-3 -> 1, 8, 27
-5 -> 1, 8, 27, 64, 125
+1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+6, 1, 33 -> [6, 1, 33]
+ввод элеменетов через консоль (через запятую. использовать метод string.Split())
 */
 
-void GetCubsUpToNum(int N)
-{
-    Console.Write($"{N} -> ");
 
-    for (int i = 1; i <= N; i++)
-    {
-        double cub = Math.Pow(i, 3);
-        Console.Write($"{cub} ");
-    }
+string[] GetArray(string message)
+{
+    Console.WriteLine(message);
+    string[] array = Console.ReadLine().Split(new char[] {','});
+    Console.WriteLine();
+    
+    for (int i = 0; i < array.Length; i++)
+        Console.Write($"{array[i]} ");
+    return array;
 }
-Console.WriteLine("Введите число: ");
-int number = int.Parse(Console.ReadLine());
-GetCubsUpToNum(number);
+GetArray("Введите через запятую 8 чисел:");

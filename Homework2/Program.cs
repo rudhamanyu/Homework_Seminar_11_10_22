@@ -1,17 +1,17 @@
-﻿/*
-Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
+﻿/*Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
 
-A (3,6,8); B (2,1,-7), -> 15.84
-
-A (7,-5, 0); B (1,-1,9) -> 11.53
+452 -> 11
+82 -> 10
+9012 -> 12
 */
 
+Console.WriteLine("Введите число:");
+int number = int.Parse(Console.ReadLine()??"");
 
-
-void DistanceBetweenPoints(int xa, int ya, int za, int xb, int yb, int zb)
+int sum = 0;
+while (number > 0)
 {
-    double distance = Math.Sqrt(Math.Pow((xb - xa), 2) + Math.Pow((yb - ya), 2) + Math.Pow((zb - za), 2));
-    Console.Write($"A ({xa},{ya},{za}); B ({xb},{yb},{zb}) -> {distance}");
+    sum = sum + number % 10;
+    number = number / 10;
 }
-
-DistanceBetweenPoints(7, -5, 0, 1, -1, 9);
+Console.WriteLine(sum);
